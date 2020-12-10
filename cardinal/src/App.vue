@@ -1,17 +1,24 @@
 <template>
   <div id="app">
     <h1>Employee Directory</h1>
-    <input
-      type="text"
-      placeholder="Enter First or Last Name"
-      v-model="searchQuery"
-    />
-    <select v-model="selected">
-      <option>Select a Department</option>
-      <option value="Executive">Executive</option>
-      <option value="Sales">Sales</option>
-      <option value="Marketing">Marketing</option>
-    </select>
+    <div class="input-container">
+      <input
+        type="text"
+        class="form__input"
+        placeholder="Enter First or Last Name"
+        v-model="searchQuery"
+      />
+      <select v-model="selected" class="form__input">
+        <option value="">Select a Department</option>
+        <option value="Executive">Executive</option>
+        <option value="Sales">Sales</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Information Technology">Information Technology</option>
+        <option value="Human Resources">Human Resources</option>
+        <option value="Operations">Operations</option>
+        <option value="Finance">Finance</option>
+      </select>
+    </div>
     <div class="employees-container">
       <Employee
         v-for="employee in filteredResults"
@@ -86,8 +93,10 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -105,5 +114,36 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   padding: 5%;
+}
+
+h1 {
+  color: #002d40;
+  font-size: 3rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  margin: 0rem 1rem;
+}
+
+select {
+  margin: 0rem 1rem;
+}
+
+.form__input {
+  color: #333;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 20rem;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
 }
 </style>

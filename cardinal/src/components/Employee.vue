@@ -10,6 +10,8 @@
     <div class="employee-job-title">
       {{ employeeJob }}
     </div>
+    <router-link to="/employee">Details</router-link>
+    <router-view />
   </div>
 </template>
 
