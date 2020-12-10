@@ -1,19 +1,14 @@
 <template>
   <div class="employee-container">
-    <div class="employee-name">
-      {{ employeeName }}
-    </div>
-    <div class="employee-last-name">
-      {{ employeeLastName }}
-    </div>
-    <div class="employee-job-title">
-      {{ employeeJob }}
+    <div class="employee-name">{{ employeeName }} {{ employeeLastName }}</div>
+    <div class="employee-headshot">
+      <img :src="employeeHeadshot" />
     </div>
     <div class="employee-department">
       {{ employeeDepartment }}
     </div>
-    <div class="employee-headshot">
-      <img :src="employeeHeadshot" />
+    <div class="employee-job-title">
+      {{ employeeJob }}
     </div>
   </div>
 </template>
@@ -44,5 +39,19 @@ export default {
   margin: 2%;
   color: #dfa928;
   background-color: #002d40;
+}
+
+img {
+  border-radius: 20%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.employee-name {
+  font-weight: 800;
+}
+
+.employee-department {
+  padding-bottom: 2%;
 }
 </style>
