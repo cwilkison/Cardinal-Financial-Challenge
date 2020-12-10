@@ -28,32 +28,24 @@
 
 <script>
 import Employee from "./components/Employee";
-import axios from "axios";
+// import axios from "axios";
+import employeeData from "./employeeData.json";
 
 export default {
   name: "App",
   data() {
     return {
-      employeeResponse: [],
+      employeeResponse: employeeData.results.map((res) => res),
       searchQuery: "",
     };
   },
   components: {
     Employee,
   },
-  created() {
-    axios
-      .get("./employeeData.json")
-      .then((response) => {
-        console.log(response);
-        this.employeeResponse = response.data.results;
-      })
-      .catch((e) => {
-        this.errors.push(e);
-      });
-  },
+  created() {},
   computed: {
     searchedResult() {
+      console.log(this.employeeResponse);
       const value =
         this.searchQuery.charAt(0).toLowerCase() + this.searchQuery.slice(1);
       let searchArray = this.employeeResponse.filter(function (employee) {
