@@ -36,7 +36,6 @@
 
 <script>
 import Employee from "./components/Employee";
-// import axios from "axios";
 import employeeData from "./employeeData.json";
 
 export default {

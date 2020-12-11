@@ -12,7 +12,6 @@ const router = new VueRouter({
     },
     {
       path: '/employee/:id',
-      props: true,
       component: EmployeeDetail
     }
   ]
