@@ -11,7 +11,8 @@ const router = new VueRouter({
       component: App
     },
     {
-      path: '/employee',
+      path: '/employee/:id',
+      props: true,
       component: EmployeeDetail
     }
   ]

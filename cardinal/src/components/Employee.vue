@@ -10,7 +10,9 @@
     <div class="employee-job-title">
       {{ employeeJob }}
     </div>
-    <router-link to="/employee">View</router-link>
+    <div id="nav">
+      <router-link v-bind:to="'/employee/' + employeeId">View</router-link>
+    </div>
     <router-view />
   </div>
 </template>
@@ -55,5 +57,10 @@ img {
 
 .employee-department {
   padding-bottom: 2%;
+}
+
+#nav {
+  padding-top: 5px;
+  color: #4e9a92;
 }
 </style>
