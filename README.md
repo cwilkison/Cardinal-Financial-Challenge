@@ -1,4 +1,4 @@
-# Cardinal-Financial-Challenge
+# Employee Directory
 
 
 https://cardinal-financial-challenge.vercel.app/
